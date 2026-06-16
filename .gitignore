@@ -1,0 +1,42 @@
+# ========================
+# .NET
+# ========================
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.vs/
+*.vscode/
+*.DotSettings.user
+publish/
+out/
+
+# ========================
+# Node / React
+# ========================
+node_modules/
+dist/
+.pnpm-store/
+
+# ========================
+# Environment files
+# ========================
+.env
+.env.*
+!.env.example
+
+# ========================
+# IDE
+# ========================
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================
+# OS
+# ========================
+Thumbs.db
+Desktop.ini
+.DS_Store
