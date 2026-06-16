@@ -38,8 +38,12 @@ app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.MapControllers();
 
-app.MapGet("/", () => Results.Ok(new { status = "Logistica API running", timestamp = DateTime.UtcNow }))
+app.MapGet("/health", () => Results.Ok(new { status = "Logistica API running", timestamp = DateTime.UtcNow }))
    .WithName("HealthCheck")
    .WithOpenApi();
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
 
 app.Run();
