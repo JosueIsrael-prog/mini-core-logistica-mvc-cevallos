@@ -9,9 +9,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<LogisticaDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Controladores MVC
+builder.Services.AddControllers();
+
 // Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// CORS — permitir peticiones desde el frontend React (Vite)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -30,6 +44,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("AllowFrontend");
+
+app.MapControllers();
 
 app.MapGet("/", () => Results.Ok(new { status = "Logistica API running", timestamp = DateTime.UtcNow }))
    .WithName("HealthCheck")
