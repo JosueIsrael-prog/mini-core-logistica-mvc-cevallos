@@ -140,7 +140,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Josue Cevallos — Universidad de las Fuerzas Armadas ESPE · 2025</p>
+        <p>Josue Cevallos — Universidad de las Américas · 2026</p>
       </footer>
     </div>
   );

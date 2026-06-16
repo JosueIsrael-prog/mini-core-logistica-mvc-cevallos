@@ -3,20 +3,13 @@ using Logistica.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ──────────────── Servicios ────────────────
-
-// Registrar DbContext con PostgreSQL (Supabase)
 builder.Services.AddDbContext<LogisticaDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Controladores MVC
 builder.Services.AddControllers();
-
-// Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// CORS — permitir peticiones desde el frontend React (Vite)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
@@ -29,14 +22,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// ──────────────── Aplicar migraciones y seed data ────────────────
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<LogisticaDbContext>();
     db.Database.Migrate();
 }
 
-// ──────────────── Pipeline HTTP ────────────────
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -45,7 +36,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
-
 app.MapControllers();
 
 app.MapGet("/", () => Results.Ok(new { status = "Logistica API running", timestamp = DateTime.UtcNow }))
