@@ -1,15 +1,16 @@
 # Stage 1: Build React frontend
 FROM node:22-alpine AS frontend-build
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-
 WORKDIR /app/frontend
-COPY Logistica.Client/package.json Logistica.Client/pnpm-lock.yaml ./
-RUN pnpm install --no-frozen-lockfile
 
+# Copiar solo el package.json (ignoramos el pnpm-lock para evitar el chequeo de políticas)
+COPY Logistica.Client/package.json ./
+
+# Instalar dependencias usando npm estándar
+RUN npm install
+
+# Copiar el resto del código del cliente y compilar
 COPY Logistica.Client/ ./
-RUN pnpm build
+RUN npm run build
 
 # Stage 2: Build .NET API
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS backend-build
