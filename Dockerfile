@@ -6,7 +6,7 @@ RUN corepack enable
 
 WORKDIR /app/frontend
 COPY Logistica.Client/package.json Logistica.Client/pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 COPY Logistica.Client/ ./
 RUN pnpm build
