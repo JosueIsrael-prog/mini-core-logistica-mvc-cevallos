@@ -2,9 +2,9 @@
 
 ![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![React 19](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![pnpm](https://img.shields.io/badge/pnpm-10-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Frontend-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-DB-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-BaaS-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-Deploy-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
 ---
@@ -110,8 +110,8 @@ El cliente se levanta en `http://localhost:5173` y consume la API automáticamen
 
 | Entregable | Enlace |
 |------------|--------|
-| 📹 Video Explicativo (Loom/YouTube) | [Insertar link del video aquí] |
-| 🌐 Proyecto Deployado (Render) | [Insertar link de Render aquí] |
+| 📹 Video Explicativo (Loom/YouTube) | [Ver video explicativo en YouTube](https://youtu.be/Pd0_iI6Basc?si=k3D5vpri6VZ1OHrO) |
+| 🌐 Proyecto Deployado (Render) | [mini-core-logistica-mvc-cevallos.onrender.com](https://mini-core-logistica-mvc-cevallos.onrender.com) |
 | 📦 Repositorio GitHub | [github.com/JosueIsrael-prog/mini-core-logistica-mvc-cevallos](https://github.com/JosueIsrael-prog/mini-core-logistica-mvc-cevallos) |
 
 ### Documentación de Referencia
